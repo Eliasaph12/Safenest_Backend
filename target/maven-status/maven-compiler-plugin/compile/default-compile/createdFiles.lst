@@ -1,0 +1,10 @@
+com\klu\model\User.class
+com\klu\service\ProductService.class
+com\klu\repository\ProductRepository.class
+com\klu\controller\AuthController.class
+com\klu\EcommerceApplication.class
+com\klu\service\UserService.class
+com\klu\config\SecurityConfig.class
+com\klu\model\Product.class
+com\klu\repository\UserRepository.class
+com\klu\controller\ProductController.class
