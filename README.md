@@ -1,4 +1,4 @@
-# E-Commerce Backend
+ify # E-Commerce Backend
 
 This is the backend for the E-Commerce application, built with Spring Boot.
 
@@ -27,7 +27,6 @@ This is the backend for the E-Commerce application, built with Spring Boot.
    - `DATABASE_PASSWORD`
    - `SERVER_PORT=8080`
    - `SPRING_PROFILES_ACTIVE=prod`
-   - `FRONTEND_URL=https://your-frontend.railway.app` (for CORS)
 5. Deploy! Procfile auto-used, Flyway migrates DB.
 
 Monitor logs, health: `/actuator/health`.
@@ -44,6 +43,6 @@ Monitor logs, health: `/actuator/health`.
 | PUT | `/api/products/{id}` | Update product |
 | DELETE | `/api/products/{id}` | Delete product |
 
-**CORS:** Configurable via `FRONTEND_URL` env (default: http://localhost:3000).
+**CORS:** Standalone backend. Configure SecurityConfig as needed (no frontend coupling).
 
-See `DATABASE_SETUP.md` for DB details, `TODO.md` for progress.
+See `DATABASE_SETUP.md` for DB details.

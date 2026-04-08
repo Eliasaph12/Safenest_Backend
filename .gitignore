@@ -71,3 +71,8 @@ build/
 
 # OS
 Thumbs.db
+
+# Frontend
+node_modules/
+package-lock.json
+package.json
