@@ -89,6 +89,46 @@ Important:
 - `FRONTEND_URL` can be a comma-separated list of allowed origins if you deploy multiple frontend URLs.
 - Your database must be reachable from Render. If you are using a local MySQL instance on your laptop, Render will not be able to access it.
 
+## Recommended Cloud Database
+
+The easiest hosted MySQL option for this project is Railway MySQL.
+
+Railway provides these variables for a MySQL service:
+
+- `MYSQLHOST`
+- `MYSQLPORT`
+- `MYSQLUSER`
+- `MYSQLPASSWORD`
+- `MYSQLDATABASE`
+- `MYSQL_URL`
+
+This backend now supports those Railway variable names directly, in addition to the existing `DB_*` variables.
+
+### Render + Railway setup
+
+1. Create a MySQL database in Railway.
+2. Copy the connection values from the Railway MySQL service.
+3. In Render, set either:
+   - `MYSQLHOST`, `MYSQLPORT`, `MYSQLUSER`, `MYSQLPASSWORD`, `MYSQLDATABASE`
+   or
+   - `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
+4. Set `FRONTEND_URL` in Render to your deployed frontend URL.
+5. Deploy the Render web service.
+
+### Migrating your current local database
+
+If you want your existing local MySQL data in production, export it locally:
+
+```powershell
+mysqldump -u root -p safenest_db > safenest_db.sql
+```
+
+Then import it into the hosted MySQL database:
+
+```powershell
+mysql -h YOUR_HOST -P YOUR_PORT -u YOUR_USER -p YOUR_DATABASE < safenest_db.sql
+```
+
 ## Available Routes
 
 - `POST /api/auth/login`
